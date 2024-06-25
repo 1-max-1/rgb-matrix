@@ -1,0 +1,9 @@
+.pio
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch
+rgb-matrix-pcb/fab
+rgb-matrix-pcb/rgb-matrix-pcb-backups
+rgb-matrix-pcb/fp-info-cache
+rgb-matrix-pcb/rgb-matrix-pcb.kicad_prl

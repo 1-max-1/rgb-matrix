@@ -1,0 +1,211 @@
+//#include "RGBMatrix.h"
+//
+//RGBMatrix::RGBMatrix(byte latchPin) {
+//	pinMode(latchPin, OUTPUT);
+//	pwmCounter = 1;
+//	SPI.begin();
+//	SPI.setBitOrder(LSBFIRST);
+//	//SPI.beginTransaction(SPISettings(4000000, LSBFIRST, SPI_MODE0));
+//}
+//
+//RGBMatrix::~RGBMatrix() {
+//	//SPI.endTransaction();
+//	SPI.end();
+//}
+//
+//void RGBMatrix::setShiftRegisterData(shiftRegisters sr, byte bitOrder, byte daisyChainIndex) {
+//	shiftRegisterData[(int)sr][SR_BIT_ORDER] = bitOrder;
+//	shiftRegisterData[(int)sr][SR_DAISY_CHAIN_INDEX] = daisyChainIndex;
+//}
+//
+//void RGBMatrix::setPixel(byte x, byte y, byte r, byte g, byte b) {
+//	// Need to go mx+c because the array is a 2d one set out like a 1d one
+//	pixels[y * 8 + x].color[COLOR_R] = r;
+//	pixels[y * 8 + x].color[COLOR_G] = g;
+//	pixels[y * 8 + x].color[COLOR_B] = b;
+//}
+//
+//void RGBMatrix::sendByteArray(byte* data) {
+//	//digitalWrite(latchPin, LOW);
+//	//bitClear(PORTD, latchPin);
+//	GPIO.out_w1tc = (uint32_t)134217728U; //pin27
+//
+//	// Need to start from 2 and go to 1 instead of 1 to 0 so the for loop can go negative and exit.
+//	// And yes I DID try using a char instead of a byte, but for some reason that had no effect when I used an esp32. WACKY
+//	for (byte i = 4; i > 0; i--) {
+//		SPI.transfer(data[i - 1]);
+//	}
+//
+//	GPIO.out_w1ts = (uint32_t)134217728U; //pin27
+//	//bitSet(PORTD, latchPin);
+//	//digitalWrite(latchPin, HIGH);
+//}
+//
+//void RGBMatrix::tick() {
+//	// Scan through every row - if we do it fast enough then the human eye wont notice
+//	for (byte row = 0; row < 8; row++) {
+//		// The final data we send to the shift register chain
+//		byte dataOut[4] = { 0 };
+//
+//		// Set current row to high. The ternary condition will swap the bit around depending on if this register is using LSBFIRST or MSBFIRST
+//		byte anodeData = B00000000;
+//		bitSet(anodeData, shiftRegisterData[(int)shiftRegisters::SR_ANODE][SR_BIT_ORDER] ? row : 7 - row);
+//		// Add the byte of data for the anode shift register. We need to move it to the left based on its index in the daisy chain. For example, if the anode
+//		// register is at index 3, the last one in the chain, then we need to shift it 3 times so that the data will get passed to the correct register.
+//		dataOut[shiftRegisterData[(int)shiftRegisters::SR_ANODE][SR_DAISY_CHAIN_INDEX]] = anodeData;
+//
+//		// For each color
+//		for (byte c = 0; c < 3; c++) {
+//			byte data = B11111111;
+//
+//			// Then scan through ecah column for this row and color
+//			for (byte column = 0; column < 8; column++) {
+//				if(c == 2 && pwmCounter <= pixels[row * 8 + column].color[c])
+//					bitClear(data, shiftRegisterData[c][SR_BIT_ORDER] ? column : 7 - column);
+//			}
+//
+//			dataOut[shiftRegisterData[c][SR_DAISY_CHAIN_INDEX]] = data;
+//		}
+//
+//		// Show the columns, then clear them immediately. The human eye will not see them turning off, as long as the clock speed is fast enough.
+//		sendByteArray(dataOut);
+//		dataOut[shiftRegisterData[(int)shiftRegisters::SR_ANODE][SR_DAISY_CHAIN_INDEX]] = B00000000;
+//		for (byte c = 0; c < 3; c++)
+//			dataOut[shiftRegisterData[c][SR_DAISY_CHAIN_INDEX]] = B11111111;
+//		delayMicroseconds(50);
+//		sendByteArray(dataOut);
+//	}
+//
+//	// 8 levels of brightness so reset when we done
+//	pwmCounter++;
+//	if (pwmCounter > 16)
+//		pwmCounter = 1;
+//}
+
+
+#include "RGBMatrix.h"
+
+RGBMatrix::RGBMatrix(byte latchPin) {
+	pinMode(latchPin, OUTPUT);
+	pwmCounter = 1;
+	pixelDataUpdated = true;
+	SPI.begin();
+	SPI.setBitOrder(LSBFIRST);
+	//SPI.beginTransaction(SPISettings(4000000, LSBFIRST, SPI_MODE0));
+
+	// Pre-compute each byte for the anode shift register
+	for (byte row = 0; row < 8; row++) {
+		// Set current row to high. The ternary condition will swap the bit around depending on if this register is using LSBFIRST or MSBFIRST
+		byte anodeData = B00000000;
+		bitSet(anodeData, shiftRegisterData[(int)shiftRegisters::SR_ANODE][SR_BIT_ORDER] ? row : 7 - row);
+		// Add the byte of data for the anode shift register. We need to move it to the left based on its index in the daisy chain. For example, if the anode
+		// register is at index 3, the last one in the chain, then we need to shift it 3 times so that the data will get passed to the correct register.
+		anodeByteCodes[row] = anodeData;
+	}
+}
+
+RGBMatrix::~RGBMatrix() {
+	//SPI.endTransaction();
+	SPI.end();
+}
+
+void RGBMatrix::setShiftRegisterData(shiftRegisters sr, byte bitOrder, byte daisyChainIndex) {
+	shiftRegisterData[(int)sr][SR_BIT_ORDER] = bitOrder;
+	shiftRegisterData[(int)sr][SR_DAISY_CHAIN_INDEX] = daisyChainIndex;
+
+	resetSequence[shiftRegisterData[(int)shiftRegisters::SR_ANODE][SR_DAISY_CHAIN_INDEX]] = B00000000;
+	for (byte c = 0; c < 3; c++)
+		resetSequence[shiftRegisterData[c][SR_DAISY_CHAIN_INDEX]] = B11111111;
+}
+
+void RGBMatrix::setPixel(byte x, byte y, byte r, byte g, byte b) {
+	// Need to go mx+c because the array is a 2d one set out like a 1d one
+	pixels[y * 8 + x][COLOR_R] = r;
+	pixels[y * 8 + x][COLOR_G] = g;
+	pixels[y * 8 + x][COLOR_B] = b;
+	pixelDataUpdated = true;
+}
+
+void RGBMatrix::sendByteArray(byte* data) {
+	//digitalWrite(latchPin, LOW);
+	//bitClear(PORTD, latchPin);
+	GPIO.out_w1tc = (uint32_t)134217728U; //pin27
+
+	// Need to start from 4 and go to 1 instead of 3 to 0 so the for loop can exit.
+	// And yes I DID try using a char instead of a byte, but for some reason that had no effect when I used an esp32. WACKY
+	for (byte i = 4; i > 0; i--) {
+		SPI.transfer(data[i - 1]);
+	}
+
+	GPIO.out_w1ts = (uint32_t)134217728U; //pin27
+	//bitSet(PORTD, latchPin);
+	//digitalWrite(latchPin, HIGH);
+}
+
+void RGBMatrix::tick() {
+	// Scan through every row - if we do it fast enough then the human eye wont notice
+	for (byte row = 0; row < 8; row++) {
+		// The final data we send to the shift register chain
+		byte dataOut[4] = { 0 };
+
+		// Add the byte of data for the anode shift register.
+		dataOut[shiftRegisterData[(int)shiftRegisters::SR_ANODE][SR_DAISY_CHAIN_INDEX]] = anodeByteCodes[row];
+		dataCache[row][shiftRegisterData[(int)shiftRegisters::SR_ANODE][SR_DAISY_CHAIN_INDEX]] = anodeByteCodes[row];
+
+		if (pixelDataUpdated) {
+			// For each color
+			for (byte c = 0; c < 3; c++) {
+				byte data = B11111111;
+
+				// Then scan through ecah column for this row and color
+				for (byte column = 0; column < 8; column++) {
+					if (pwmCounter <= pixels[row * 8 + column][c])
+						bitClear(data, shiftRegisterData[c][SR_BIT_ORDER] ? column : 7 - column);
+				}
+
+				dataOut[shiftRegisterData[c][SR_DAISY_CHAIN_INDEX]] = data;
+				dataCache[row][shiftRegisterData[c][SR_DAISY_CHAIN_INDEX]] = data;
+			}
+		}
+		else {
+			/*dataOut[1] = dataCache[row][0];
+			dataOut[2] = dataCache[row][1];
+			dataOut[3] = dataCache[row][2];*/
+		}
+
+		// Show the columns, then clear them immediately. The human eye will not see them turning off, as long as the clock speed is fast enough.
+		Serial.println("Sending ");
+		Serial.println(dataCache[row][0], BIN);
+		Serial.println(dataCache[row][1], BIN);
+		Serial.println(dataCache[row][2], BIN);
+		Serial.println(dataCache[row][3], BIN);
+		Serial.println();
+
+		sendByteArray(dataCache[row]);
+		//delayMicroseconds(50);
+		delay(5000);
+		/*dataOut[shiftRegisterData[(int)shiftRegisters::SR_ANODE][SR_DAISY_CHAIN_INDEX]] = B00000000;
+		for (byte c = 0; c < 3; c++)
+			dataOut[shiftRegisterData[c][SR_DAISY_CHAIN_INDEX]] = B11111111;
+		//delayMicroseconds(50);
+		sendByteArray(dataOut);*/
+		sendByteArray(resetSequence);
+	}
+
+	// 8 levels of brightness so reset when we done
+	pwmCounter++;
+	if (pwmCounter > 16)
+		pwmCounter = 1;
+
+	pixelDataUpdated = false;
+}
+
+void RGBMatrix::testing() {
+	// Fails
+	byte data[4] = {B00000010, B00000000, B00000000, B00000000};
+
+	// Works
+	//byte data[4] = {B11111111, B00000000, B00000000, B00000000};
+
+	sendByteArray(data);
+}

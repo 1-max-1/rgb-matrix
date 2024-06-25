@@ -1,0 +1,122 @@
+//#ifndef _RGBMATRIX_h
+//#define _RGBMATRIX_h
+//
+//#ifndef ESP32
+//#error This program is built for an ESP32 and will not function correctly on other boards.
+///** ESP32 specific things:
+//* The direct port manipulation in sendByteArray()
+//* The SPI pinouts
+//* sizeof(unsigned long) = 4
+//* The clock speed is fast enough to refresh the matrix without flickering
+//**/
+//#endif
+//
+//#include <Arduino.h>
+//#include <SPI.h>
+//
+//#define SR_BIT_ORDER 0
+//#define SR_DAISY_CHAIN_INDEX 1
+//#define COLOR_R 0
+//#define COLOR_G 1
+//#define COLOR_B 2
+//
+//class RGBMatrix {
+//public:
+//	// The matrix needs to be controlled with 4 shift registers: red, green, blue and one for the common anodes
+//	enum class shiftRegisters {
+//		SR_R,
+//		SR_G,
+//		SR_B,
+//		SR_ANODE
+//	};
+//
+//	RGBMatrix(byte latchPin);
+//	~RGBMatrix();
+//
+//	// Sets the pins and bit order for the specified shift register
+//	void setShiftRegisterData(shiftRegisters sr, byte bitOrder, byte daisyChainIndex);
+//	// Sets the specified pixel to the specified color. Coordinates start at 0,0 from the top left corner
+//	void setPixel(byte x, byte y, byte r, byte g, byte b);
+//	// Call this every loop. DO NOT use the delay() function in your program. This runs the row scanning and updates the pwm signals.
+//	void tick();
+//
+//private:
+//	void sendByteArray(byte* data);
+//	byte shiftRegisterData[4][2];
+//
+//	struct Pixel {
+//		byte color[3] = { 0 };
+//		// Time since this pixel last went from off to on or on to off
+//		unsigned long timeSinceLastToggle = 0;
+//		// true if currently on, else false
+//		bool currentState = false;
+//	};
+//
+//	Pixel pixels[8 * 8];   // The (effectively 2d but actually 1d) array holding the pixel object for each pixel in the matrix
+//	byte pwmCounter;
+//};
+//
+//#endif
+
+#ifndef _RGBMATRIX_h
+#define _RGBMATRIX_h
+
+#ifndef ESP32
+#error This program is built for an ESP32 and may not function correctly on other boards.
+/** ESP32 specific things:
+* The direct port manipulation in sendByteArray()
+* The SPI pinouts
+* sizeof(unsigned long) = 4 (i removed this code i think but check anyway)
+* The clock speed is fast enough to refresh the matrix without flickering
+**/
+#endif
+
+#include <Arduino.h>
+#include <SPI.h>
+
+#define SR_BIT_ORDER 0
+#define SR_DAISY_CHAIN_INDEX 1
+#define COLOR_R 0
+#define COLOR_G 1
+#define COLOR_B 2
+
+class RGBMatrix {
+public:
+	// The matrix needs to be controlled with 4 shift registers: red, green, blue and one for the common anodes
+	enum class shiftRegisters {
+		SR_R,
+		SR_G,
+		SR_B,
+		SR_ANODE
+	};
+
+	RGBMatrix(byte latchPin);
+	~RGBMatrix();
+
+	// Sets the pins and bit order for the specified shift register
+	void setShiftRegisterData(shiftRegisters sr, byte bitOrder, byte daisyChainIndex);
+	// Sets the specified pixel to the specified color. Coordinates start at 0,0 from the top left corner
+	void setPixel(byte x, byte y, byte r, byte g, byte b);
+	// Call this every loop. DO NOT use the delay() function in your program. This runs the row scanning and updates the pwm signals.
+	void tick();
+
+	void testing();
+
+private:
+	void sendByteArray(byte* data);
+	byte shiftRegisterData[4][2];
+
+	// The first element is the coordinate of the pixel (m*y+x)
+	// Each element contains an array of size 3 holding the color values for R, G and B
+	byte pixels[8 * 8][3];
+	byte pwmCounter;
+
+	// This is just a sequence of 4 bytes that will reset the matrix to all off
+	byte resetSequence[4];
+	// A list of the bytes used to switch a particular row on or off
+	byte anodeByteCodes[8];
+	byte dataCache[8][4];
+	bool pixelDataUpdated;
+};
+
+#endif

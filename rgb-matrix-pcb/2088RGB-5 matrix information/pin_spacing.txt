@@ -1,0 +1,2 @@
+matrix pin rows are are 47.4 mm apart
+pins are standard breadboard spacing of 2.54 mm
