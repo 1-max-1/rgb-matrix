@@ -14,8 +14,8 @@ public:
 	byte getB();
 
 	// Returns the row mask for this pixel.
-	// All bit positions are 1 apart from the the position corresponding to the row for this pixel.
-	// The MSB is row 0, the LSB is row 7. e.g. 0b11011111 means this pixel is in row 2. The row should be set with init().
+	// All bit positions are 0 apart from the the position corresponding to the row for this pixel.
+	// The MSB is row 0, the LSB is row 7. e.g. 0b00100000 means this pixel is in row 2. The row should be set with init().
 	byte getRowMask();
 
 private:
@@ -23,6 +23,7 @@ private:
 	byte g = 0;
 	byte b = 0;
 
+	// See getRowMask()
 	byte rowMask = 0;
 };
 

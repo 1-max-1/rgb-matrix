@@ -1,6 +1,10 @@
 #include <Arduino.h>
 #include <RGBMatrix.h>
 
+// Number of ticks of duration of the the timer that updates the matrix
+// See https://deepbluembedded.com/esp32-timers-timer-interrupt-tutorial-arduino-ide/
+const uint MATRIX_TIMER_TICKS = 100;
+
 RGBMatrix matrix;
 
 void printClockVals() {
@@ -22,14 +26,8 @@ void loopTester();
 void setupSER();
 void loopSER();
 
-bool doTickOne = false;
-unsigned long timeSinceLastChange = 0;
-
 void IRAM_ATTR doMatrixTick() {
-	if (doTickOne)
-		matrix.tickOne();
-	else
-		matrix.tick();
+	matrix.tick();
 }
 
 void setup() {
@@ -56,17 +54,10 @@ void setup() {
 
 	hw_timer_t* Timer0_Cfg = timerBegin(2, 80, true);
     timerAttachInterrupt(Timer0_Cfg, &doMatrixTick, true);
-    timerAlarmWrite(Timer0_Cfg, 50000, true);
+    timerAlarmWrite(Timer0_Cfg, MATRIX_TIMER_TICKS, true);
     timerAlarmEnable(Timer0_Cfg);
 }
 
 void loop() {
-	unsigned long now = millis();
-	if (now - timeSinceLastChange >= 500) {
-		//doTickOne = !doTickOne;
-		timeSinceLastChange = now;
-		//Serial.println(matrix.d, BIN);
-	}
-
 	//loopSER();
 }
