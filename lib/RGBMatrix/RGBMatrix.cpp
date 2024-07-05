@@ -19,16 +19,13 @@ RGBMatrix::~RGBMatrix() {
 }
 
 void RGBMatrix::initSPI() {
-	pinMode(latchPin, OUTPUT);
-	digitalWrite(latchPin, HIGH);
-
 	SPI.begin();
 	SPI.setBitOrder(SPI_LSBFIRST);
+	SPI.setHwCs(true);
+	
 	// Not sure if the SPI frequency has to be a divisor of the APB frequency.
 	// Also anything much higher than this doesn't seem to work, possibly due to excessive cross-talk in the PCB (bad routing oops)
 	SPI.setFrequency(5000000);
-
-	// TODO: play with SPI.setHwCs
 }
 
 void RGBMatrix::setPixel(byte x, byte y, byte r, byte g, byte b) {
@@ -55,9 +52,7 @@ void RGBMatrix::tick() {
 	data = ~data; // The physical circuit is wired with 1 for off and 0 for on, so we need to flip the bits
 	// TODO: fix ghosting, set rows to off first
 
-	digitalWrite(latchPin, LOW);
 	SPI.write32(data);
-	digitalWrite(latchPin, HIGH);
 
 	// Once we've gone through every column we can reset back to 0
 	tickCounter++;
