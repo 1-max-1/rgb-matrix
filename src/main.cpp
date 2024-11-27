@@ -3,7 +3,7 @@
 
 // Number of ticks of duration of the the timer that updates the matrix
 // See https://deepbluembedded.com/esp32-timers-timer-interrupt-tutorial-arduino-ide/
-const uint MATRIX_TIMER_TICKS = 100;
+const uint64_t MATRIX_TIMER_TICKS = 120;
 
 RGBMatrix matrix;
 
@@ -37,11 +37,9 @@ void setup() {
 	//setupSER();
 
 	matrix.initSPI();
+	matrix.setAntiGhost(true);
 
-	for (int i = 0; i < 8; i++) {
-		/*for (int y = 0; y < 8; y++) {
-			matrix.setPixel(i, y, 2, 2, 2);
-		}*/
+	/*for (int i = 0; i < 8; i++) {
 		matrix.setPixel(i, 0, 2, 0, 0);
 		matrix.setPixel(i, 1, 0, 2, 0);
 		matrix.setPixel(i, 2, 0, 0, 2);
@@ -50,7 +48,18 @@ void setup() {
 		matrix.setPixel(i, 5, 2, 0, 2);
 		matrix.setPixel(i, 6, 2, 2, 2);
 		matrix.setPixel(i, 7, 2, 0, 1);
-	}
+	}*/
+
+	/*for (int i = 0; i < 8; i++) {
+		for (int x = 0; x < 8; x++) {
+			matrix.setPixel(x, i, i, 0, 0);
+		}
+	}*/
+
+	matrix.setPixel(3, 1, 8, 0, 0);
+	matrix.setPixel(3, 2, 8, 0, 0);
+	matrix.setPixel(4, 5, 8, 0, 0);
+	matrix.setPixel(4, 6, 8, 0, 0);
 
 	hw_timer_t* Timer0_Cfg = timerBegin(2, 80, true);
     timerAttachInterrupt(Timer0_Cfg, &doMatrixTick, true);
@@ -59,5 +68,7 @@ void setup() {
 }
 
 void loop() {
+	// TODO: add wiring diagram
+
 	//loopSER();
 }

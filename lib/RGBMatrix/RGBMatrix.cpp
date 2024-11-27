@@ -18,11 +18,15 @@ RGBMatrix::~RGBMatrix() {
 	SPI.end();
 }
 
+void RGBMatrix::setAntiGhost(bool use) {
+	antiGhost = use;
+}
+
 void RGBMatrix::initSPI() {
 	SPI.begin();
 	SPI.setBitOrder(SPI_LSBFIRST);
 	SPI.setHwCs(true);
-	
+
 	// Not sure if the SPI frequency has to be a divisor of the APB frequency.
 	// Also anything much higher than this doesn't seem to work, possibly due to excessive cross-talk in the PCB (bad routing oops)
 	SPI.setFrequency(5000000);
@@ -50,8 +54,10 @@ void RGBMatrix::tick() {
 			data |= (pixelMask << 16);
 	}
 	data = ~data; // The physical circuit is wired with 1 for off and 0 for on, so we need to flip the bits
-	// TODO: fix ghosting, set rows to off first
 
+	if (antiGhost) {
+		SPI.write32(0xFFFFFFFF);
+	}
 	SPI.write32(data);
 
 	// Once we've gone through every column we can reset back to 0

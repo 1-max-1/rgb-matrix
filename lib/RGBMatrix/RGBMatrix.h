@@ -22,10 +22,12 @@ public:
 	// Performs the multiplexing cycle. Moves to the next column and updates the matrix. Call this method on a fixed interval.
 	void tick();
 
+	void setAntiGhost(bool use);
+
 private:
 	byte tickCounter = 0;  // Corresponds to one column/call of tick(). After 8 ticks, it resets to 0.
 	byte cycleCounter = 0; // One full cycle of all 8 columns in a matrix. Equal to 8 ticks.
-	const byte CYCLES_PER_PWM_CYCLE = 2; // PWM cycle is number of cycles that must be completed for a full brightness LED.
+	const byte CYCLES_PER_PWM_CYCLE = 8; // PWM cycle is number of cycles that must be completed for a full brightness LED.
 
 	Pixel pixels[8][8];
 
@@ -36,6 +38,8 @@ private:
 	// The mask for each column, where all bits are 0 except for a 1 in the position of the column.
 	// Each mask maps to the corresponding element in colOrder.
 	byte colMasks[8];
+
+	bool antiGhost = false;
 };
 
 #endif
