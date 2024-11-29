@@ -20,6 +20,10 @@ public:
 	// Values will be gamma corrected.
 	void setPixel(byte x, byte y, byte r, byte g, byte b);
 
+	// Sets the color of the given pixel. HSL values can range from 0 to 1.
+	// Values will be gamma corrected.
+	void setPixelHSL(byte x, byte y, float h, float s, float l);
+
 	// Performs the multiplexing cycle. Moves to the next column and updates the matrix. Call this method on a fixed interval.
 	void tick();
 
@@ -47,6 +51,10 @@ private:
 
 	// Calculated with gamma.py, using a gamma value of 3.0
 	byte gammaCorrections[32] = { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 3, 4, 4, 5, 6, 7, 8, 10, 11, 13, 14, 16, 18, 20, 23, 25, 28, 31 };
+
+	// Converts a HUE to r, g or b. Returns float in the set [0, 1].
+	// From https://gist.github.com/ciembor/1494530
+	float hueToRGB(float p, float q, float t);
 };
 
 #endif

@@ -31,6 +31,37 @@ void RGBMatrix::initSPI() {
 	SPI.setFrequency(5000000);
 }
 
+float RGBMatrix::hueToRGB(float p, float q, float t) {
+	if (t < 0)
+		t += 1;
+	if (t > 1)
+		t -= 1;
+	if (t < 1./6)
+		return p + (q - p) * 6 * t;
+	if (t < 1./2)
+		return q;
+	if (t < 2./3)
+		return p + (q - p) * (2./3 - t) * 6;
+	return p;
+}
+
+void RGBMatrix::setPixelHSL(byte x, byte y, float h, float s, float l) {
+	/* Modified from https://gist.github.com/ciembor/1494530 */
+
+	if(0 == s) {
+		byte val = l * 31; // achromatic
+		setPixel(x, y, val, val, val);
+	}
+	else {
+		float q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+		float p = 2 * l - q;
+		byte r = hueToRGB(p, q, h + 1./3) * 31;
+		byte g = hueToRGB(p, q, h) * 31;
+		byte b = hueToRGB(p, q, h - 1./3) * 31;
+		setPixel(x, y, r, g, b);
+	}
+}
+
 void RGBMatrix::setPixel(byte x, byte y, byte r, byte g, byte b) {
 	pixels[y][x].setColor(gammaCorrections[r], gammaCorrections[g], gammaCorrections[b]);
 }
