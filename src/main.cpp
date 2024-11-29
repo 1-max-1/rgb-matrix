@@ -6,26 +6,14 @@
 // Ensure this is not lower than the time it takes to execute the interrupt. Each call to SPI.write() is ~15 us.
 const uint64_t MATRIX_TIMER_TICKS = 45; // Microseconds
 
+/**
+ * The code uses the default setup for the SPI variable, so the matrix should be wired to the default VSPI pins.
+ * MOSI - 23
+ * CLK - 18
+ * CS/SS - 5
+ */
+
 RGBMatrix matrix;
-
-void printClockVals() {
-	Serial.print("CPU Freq = ");
-	Serial.print(getCpuFrequencyMhz());
-	Serial.println(" MHz");
-	Serial.print("XTAL Freq = ");
-	Serial.print(getXtalFrequencyMhz());
-	Serial.println(" MHz");
-	Serial.print("APB Freq = ");
-	Serial.print(getApbFrequency());
-	Serial.println(" Hz");
-}
-
-void setupColorTest();
-void loopColorTest();
-void setupTester();
-void loopTester();
-void setupSER();
-void loopSER();
 
 void IRAM_ATTR doMatrixTick() {
 	matrix.tick();
@@ -33,9 +21,6 @@ void IRAM_ATTR doMatrixTick() {
 
 void setup() {
 	Serial.begin(115200);
-	//printClockVals();
-	//setupColorTest();
-	//setupSER();
 
 	matrix.initSPI();
 	matrix.setAntiGhost(true);
@@ -59,8 +44,6 @@ void setup() {
 float hue = 0.f;
 
 void loop() {
-	// TODO: add wiring diagram
-
 	for (int i = 0; i < 8; i++) {
 		for (int row = 0; row < 8; row++) {
 			matrix.setPixelHSL(i, row, hue, 1.0f, 0.5f);
