@@ -25,15 +25,14 @@ void RGBMatrix::setAntiGhost(bool use) {
 void RGBMatrix::initSPI() {
 	SPI.begin();
 	SPI.setBitOrder(SPI_LSBFIRST);
-	SPI.setHwCs(true);
+	SPI.setHwCs(true); // Hardware chip-select
 
-	// Not sure if the SPI frequency has to be a divisor of the APB frequency.
-	// Also anything much higher than this doesn't seem to work, possibly due to excessive cross-talk in the PCB (bad routing oops)
+	// Anything much higher than this doesn't seem to work, possibly due to cross-talk in the PCB (bad routing naauurghhhh)
 	SPI.setFrequency(5000000);
 }
 
 void RGBMatrix::setPixel(byte x, byte y, byte r, byte g, byte b) {
-	pixels[y][x].setColor(r, g, b);
+	pixels[y][x].setColor(gammaCorrections[r], gammaCorrections[g], gammaCorrections[b]);
 }
 
 void RGBMatrix::tick() {
