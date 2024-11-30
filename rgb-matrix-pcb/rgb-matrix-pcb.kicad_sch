@@ -1615,9 +1615,9 @@
 		)
 		(symbol "power:+3.3V"
 			(power)
+			(pin_numbers hide)
 			(pin_names
-				(offset 0)
-			)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1715,8 +1715,8 @@
 			(symbol "+3.3V_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
-					(name "+3.3V"
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1735,9 +1735,9 @@
 		)
 		(symbol "power:GND"
 			(power)
+			(pin_numbers hide)
 			(pin_names
-				(offset 0)
-			)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1811,8 +1811,8 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
-					(name "GND"
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1894,7 +1894,7 @@
 				(pin power_out line
 					(at 0 0 90)
 					(length 0)
-					(name "pwr"
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5589,6 +5589,17 @@
 		)
 		(uuid "7260ed84-d6c5-4949-85a1-a31ed78169c1")
 	)
+	(text "A current amplifier was greenwired to sit between\nmatrix pins 17-20, 29-32 and the columns shift register."
+		(exclude_from_sim no)
+		(at 19.05 154.686 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "74d3d9b9-cf18-4ed8-9c79-be3462d7d0e1")
+	)
 	(text "Columns shift register"
 		(exclude_from_sim no)
 		(at 77.47 177.8 0)
@@ -7063,7 +7074,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 101.6 185.42 0)
 			(effects
 				(font
@@ -7196,7 +7207,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
 			(at 40.64 29.21 0)
 			(effects
 				(font
@@ -7953,7 +7964,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
 			(at 229.87 88.9 0)
 			(effects
 				(font
@@ -8477,7 +8488,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Special symbol for telling ERC where power comes from"
 			(at 58.42 45.72 0)
 			(effects
 				(font
@@ -8957,7 +8968,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 229.87 104.14 0)
 			(effects
 				(font
@@ -9161,7 +9172,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 67.31 45.72 0)
 			(effects
 				(font
@@ -9228,7 +9239,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Special symbol for telling ERC where power comes from"
 			(at 40.64 30.48 0)
 			(effects
 				(font
@@ -9540,7 +9551,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
 			(at 82.55 20.32 0)
 			(effects
 				(font
@@ -9557,6 +9568,44 @@
 				(path "/d24d6f77-3b9a-4a71-af59-9eeebe23ffcf"
 					(reference "#PWR02")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 29.21 161.29)
+		(size 30.48 26.67)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "cb7e1115-ac13-454c-82ac-8c77ef3d3989")
+		(property "Sheetname" "Current Amplifier"
+			(at 29.21 160.5784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "currentAmp.kicad_sch"
+			(at 29.21 188.5446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "rgb-matrix-pcb"
+				(path "/d24d6f77-3b9a-4a71-af59-9eeebe23ffcf"
+					(page "2")
 				)
 			)
 		)

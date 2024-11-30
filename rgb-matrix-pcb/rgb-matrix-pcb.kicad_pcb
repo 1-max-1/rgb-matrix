@@ -223,7 +223,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -235,7 +235,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -247,7 +247,7 @@
 				)
 			)
 		)
-		(property "Description" "8-bit serial in/out Shift Register 3-State Outputs"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -259,7 +259,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "DIP*W7.62mm* SOIC*3.9x9.9mm*P1.27mm* TSSOP*4.4x5mm*P0.65mm* SOIC*5.3x10.2mm*P1.27mm* SOIC*7.5x10.3mm*P1.27mm*")
 		(path "/39084731-5bb3-4c7d-be17-3ef5b50d200c")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -629,7 +631,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "91R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "74930525-2423-4f02-bcec-537ba5b3aa52")
@@ -640,7 +642,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -664,7 +666,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -676,7 +678,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/b836e279-53fc-4147-84ee-fc142965e510")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -910,7 +914,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -922,7 +926,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -934,7 +938,7 @@
 				)
 			)
 		)
-		(property "Description" "8-bit serial in/out Shift Register 3-State Outputs"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -946,7 +950,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "DIP*W7.62mm* SOIC*3.9x9.9mm*P1.27mm* TSSOP*4.4x5mm*P0.65mm* SOIC*5.3x10.2mm*P1.27mm* SOIC*7.5x10.3mm*P1.27mm*")
 		(path "/edb48681-2187-4723-80de-865f20beffbb")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -1316,7 +1322,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "2R2"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "8cc864e8-97da-4142-9f71-7d1fb4eadf4a")
@@ -1327,7 +1333,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1351,7 +1357,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1363,7 +1369,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ac5cbc3d-e38a-4d82-840a-70825e822caf")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -1598,7 +1606,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1622,7 +1630,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x16, script generated"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1634,7 +1642,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/4fac2485-f8f8-446e-851e-0975483739d7")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2003,7 +2013,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "2R2"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "8dc8ab9f-0247-4ea0-8120-4620266f418e")
@@ -2014,7 +2024,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2038,7 +2048,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2050,7 +2060,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/e962503d-5bce-4566-99f0-9f4afa7860c6")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2273,7 +2285,7 @@
 				)
 			)
 		)
-		(property "Value" "0.1"
+		(property "Value" "0.1u"
 			(at 1.25 2.3 0)
 			(layer "F.Fab")
 			(uuid "d9003602-30b4-41e5-bbc6-baf9ec96b65a")
@@ -2284,7 +2296,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.4mm_W2.1mm_P2.50mm"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2308,7 +2320,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2320,7 +2332,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/a0d26de1-a141-4b68-889c-24ae41ccb6da")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2535,7 +2549,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x16_P2.54mm_Vertical"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -2559,7 +2573,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x16, script generated"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -2571,7 +2585,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/24e1ce4f-d105-4a72-a887-d7a93bed7097")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -2940,7 +2956,7 @@
 				)
 			)
 		)
-		(property "Value" "0.1"
+		(property "Value" "0.1u"
 			(at 1.25 2.3 90)
 			(layer "F.Fab")
 			(uuid "1f77572d-cc1c-47a7-982f-8bc5adbdda5c")
@@ -2951,7 +2967,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.4mm_W2.1mm_P2.50mm"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2975,7 +2991,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2987,7 +3003,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/c0ddf6e9-c33d-4894-9298-e5250edc481b")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3190,7 +3208,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "2R2"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "d39a70a8-7134-4dab-b713-b7b725e6f9fd")
@@ -3201,7 +3219,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -3225,7 +3243,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -3237,7 +3255,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/b0b70797-0a91-4ec4-ab3e-b82f9136db66")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3460,7 +3480,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "2R2"
 			(at -2.54 0 90)
 			(layer "F.Fab")
 			(uuid "9ec6b19b-b87d-4ec2-bc91-62e206793362")
@@ -3471,7 +3491,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3495,7 +3515,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3507,7 +3527,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/3071e1dc-2693-4844-843f-3b401e2b141d")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -3730,7 +3752,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "91R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "7f8f5e31-b82a-4b22-8d27-9e26e3e57691")
@@ -3741,7 +3763,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -3765,7 +3787,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -3777,7 +3799,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/e4af3fc3-0230-4809-b302-b1162ab7ad3a")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -4000,7 +4024,7 @@
 				)
 			)
 		)
-		(property "Value" "0.1"
+		(property "Value" "0.1u"
 			(at 1.25 2.3 0)
 			(layer "F.Fab")
 			(uuid "8f6e0f64-36d3-4b87-9630-212e5784e727")
@@ -4011,7 +4035,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.4mm_W2.1mm_P2.50mm"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -4035,7 +4059,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -4047,7 +4071,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/a0eb5da5-5cee-4cef-a25f-66c19eef3ad0")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -4261,7 +4287,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4273,7 +4299,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4285,7 +4311,7 @@
 				)
 			)
 		)
-		(property "Description" "8-bit serial in/out Shift Register 3-State Outputs"
+		(property "Description" ""
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4297,7 +4323,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "DIP*W7.62mm* SOIC*3.9x9.9mm*P1.27mm* TSSOP*4.4x5mm*P0.65mm* SOIC*5.3x10.2mm*P1.27mm* SOIC*7.5x10.3mm*P1.27mm*")
 		(path "/07b0691f-7a6e-484f-b30c-0d8bd4b1da59")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -4667,7 +4695,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "33R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "005517a0-bc64-4619-921c-ef9d4a9958c7")
@@ -4678,7 +4706,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4702,7 +4730,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4714,7 +4742,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/04fd9ae0-c183-4e61-8ad9-e7eb13d9edd4")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -4937,7 +4967,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "33R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "b725f7f7-b7b0-4fbb-9563-0575957c818c")
@@ -4948,7 +4978,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -4972,7 +5002,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -4984,7 +5014,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/53716d59-7a1d-4c2d-8136-84f580a43437")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -5207,7 +5239,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "33R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "1b947bf0-bc97-47fc-80a3-3cadb3eed279")
@@ -5218,7 +5250,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5242,7 +5274,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5254,7 +5286,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/90cf0258-8005-4465-85c5-891acdab8d1f")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -5477,7 +5511,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "33R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "d51a6b79-c93b-4a1d-8126-3901520d6bc2")
@@ -5488,7 +5522,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5512,7 +5546,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5524,7 +5558,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/806e2d48-62ee-4fa7-b578-287c22abd5b5")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -5747,7 +5783,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "33R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "74798f8f-25e1-4cc7-9b77-1f5a42233f8f")
@@ -5758,7 +5794,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5782,7 +5818,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5794,7 +5830,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/4b851be5-087e-4aaa-9d51-7dbb6097b4f3")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -6017,7 +6055,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "33R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "bb39294f-91a4-4313-8be6-fead41096495")
@@ -6028,7 +6066,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6052,7 +6090,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6064,7 +6102,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/5ec9d342-030c-4670-a984-d8e8994a2a04")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -6287,7 +6327,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "91R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "45e60180-4242-43fb-b109-dcbf64388dc4")
@@ -6298,7 +6338,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -6322,7 +6362,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -6334,7 +6374,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/133ad44c-eef7-437d-9236-c7890f08c088")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -6557,7 +6599,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "91R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "70965c26-09d8-4c0d-991f-a60278439b59")
@@ -6568,7 +6610,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -6592,7 +6634,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -6604,7 +6646,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/784cdac6-c49b-4a58-8742-a2d911c21ddb")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -6827,7 +6871,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "91R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "03c90ccb-9a16-40ab-9c80-ded78743b3da")
@@ -6838,7 +6882,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -6862,7 +6906,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -6874,7 +6918,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/3a2b6757-050e-4d9e-8885-9d66be41e5c2")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -7097,7 +7143,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "91R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "4077e777-62b8-402c-83ff-7b9f08c70036")
@@ -7108,7 +7154,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -7132,7 +7178,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -7144,7 +7190,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/5e95fd25-880b-43d1-9721-7e54fa2ab039")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -7378,7 +7426,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -7390,7 +7438,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -7402,7 +7450,7 @@
 				)
 			)
 		)
-		(property "Description" "8-bit serial in/out Shift Register 3-State Outputs"
+		(property "Description" ""
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -7414,7 +7462,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "DIP*W7.62mm* SOIC*3.9x9.9mm*P1.27mm* TSSOP*4.4x5mm*P0.65mm* SOIC*5.3x10.2mm*P1.27mm* SOIC*7.5x10.3mm*P1.27mm*")
 		(path "/8182c351-3e2a-4a64-91d0-98cf9a227a43")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -7796,7 +7846,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_PH_S5B-PH-K_1x05_P2.00mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7820,7 +7870,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7832,7 +7882,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/8612e435-d9a9-4990-af6d-38f033e4a022")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -13642,7 +13694,7 @@
 				)
 			)
 		)
-		(property "Value" "0.1"
+		(property "Value" "0.1u"
 			(at 1.25 2.3 0)
 			(layer "F.Fab")
 			(uuid "2869f3c3-bfe6-4d10-aa78-969d40c54faf")
@@ -13653,7 +13705,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.4mm_W2.1mm_P2.50mm"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13677,7 +13729,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13689,7 +13741,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/a2f53772-d9f3-4275-9341-7a732b00e91e")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -13892,7 +13946,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "2R2"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "a6d030d7-4769-4324-9f9e-093626aa49b0")
@@ -13903,7 +13957,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13927,7 +13981,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13939,7 +13993,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/008e0bc2-5aab-4eb3-ac17-c3a8edfcd7c1")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -14162,7 +14218,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "91R"
 			(at -2.54 -0.07 0)
 			(layer "F.Fab")
 			(uuid "0c9899b9-3643-411b-bead-bef356c1dc82")
@@ -14173,7 +14229,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -14197,7 +14253,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -14209,7 +14265,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/7969b070-fb04-4929-8aa4-3488505f6409")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -14432,7 +14490,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "2R2"
 			(at -2.54 0 180)
 			(layer "F.Fab")
 			(uuid "160b25fb-338d-45df-9dca-8b3843bdf68b")
@@ -14443,7 +14501,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -14467,7 +14525,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -14479,7 +14537,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/02f5da95-3621-43d7-93f0-bae0511b2dc1")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -14702,7 +14762,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "33R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "66db9a61-53ee-4df2-89c8-d1fcd60f0e86")
@@ -14713,7 +14773,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -14737,7 +14797,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -14749,7 +14809,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/2e2072c1-20ec-47fe-874d-82faf22d0141")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -14972,7 +15034,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "2R2"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "fd264745-5e93-44c4-a90e-4be0a05b4327")
@@ -14983,7 +15045,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15007,7 +15069,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15019,7 +15081,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/41940555-7c2f-4eb8-ba2a-d097cdc747c9")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -15242,7 +15306,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "33R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "ba98d888-b80d-4ebf-a03a-3e2ca08ca884")
@@ -15253,7 +15317,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15277,7 +15341,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15289,7 +15353,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/2c926826-e642-4829-bca6-78e585f92047")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -15512,7 +15578,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "2R2"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "8a54f6a8-c619-41b1-8fec-670d7fdda80d")
@@ -15523,7 +15589,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15547,7 +15613,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15559,7 +15625,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/8b96b4ae-fe05-4092-9ef1-2ed50f403293")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -15782,7 +15850,7 @@
 				)
 			)
 		)
-		(property "Value" "75"
+		(property "Value" "91R"
 			(at -2.54 0 0)
 			(layer "F.Fab")
 			(uuid "b95381f1-f398-4630-9be9-8fb5ffccbf91")
@@ -15793,7 +15861,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -15817,7 +15885,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -15829,7 +15897,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/4532d609-195a-4f77-8b14-e3a08fd81944")
+		(sheetname "Root")
 		(sheetfile "rgb-matrix-pcb.kicad_sch")
 		(attr through_hole)
 		(fp_line

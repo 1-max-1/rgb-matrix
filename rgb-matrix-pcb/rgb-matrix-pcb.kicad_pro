@@ -593,6 +593,10 @@
     [
       "d24d6f77-3b9a-4a71-af59-9eeebe23ffcf",
       "Root"
+    ],
+    [
+      "cb7e1115-ac13-454c-82ac-8c77ef3d3989",
+      "Current Amplifier"
     ]
   ],
   "text_variables": {}
