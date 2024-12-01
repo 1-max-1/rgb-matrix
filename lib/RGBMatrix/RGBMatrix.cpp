@@ -66,6 +66,14 @@ void RGBMatrix::setPixel(byte x, byte y, byte r, byte g, byte b) {
 	pixels[y][x].setColor(gammaCorrections[r], gammaCorrections[g], gammaCorrections[b]);
 }
 
+void RGBMatrix::clearPixels() {
+	for (byte row = 0; row < 8; row++) {
+		for (Pixel& pixel : pixels[row]) {
+			pixel.setColor(0, 0, 0);
+		}
+	}
+}
+
 void RGBMatrix::tick() {
 	// One tick is one column
 	uint32_t data = colMasks[tickCounter];

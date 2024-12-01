@@ -24,6 +24,9 @@ public:
 	// Values will be gamma corrected.
 	void setPixelHSL(byte x, byte y, float h, float s, float l);
 
+	// Set all pixels to off.
+	void clearPixels();
+
 	// Performs the multiplexing cycle. Moves to the next column and updates the matrix. Call this method on a fixed interval.
 	void tick();
 
