@@ -1,8 +1,6 @@
 # RGB Matrix
 PCB and software for driving an 8x8 matrix of RGB LED's.
 
-⚠ NOTE: The software is not 100% complete, most of it works but it needs a few final tweaks and cleanup.
-
 ![top_view](https://github.com/1-max-1/rgb-matrix/assets/44454544/49b84bfe-8572-452c-836f-eb40d9d4f547)
 ![side_view](https://github.com/1-max-1/rgb-matrix/assets/44454544/6721da1e-6e35-452b-baea-d5e43391b232)
 
@@ -24,3 +22,5 @@ I made a few mistakes. The biggest was that I completely overestimated the amoun
 # Software
 
 The software is intended to be run on ESP32, it is untested for other boards. It uses hardware SPI to communicate with the matrix board. It operates by turning on each column of the matrix, one at a time. The desired rows for each column are then enabled. The LED's are then turned off and the cycle repeats with the next row. If done fast enough, the human eye will percieve the LED's as being constantly illuminated. One of the ESP32 hardware timers is used to control the cycle speed. With this method, brightness control can be achieved by not illuminating a row for some number of scan cycles.
+
+Some display patterns have been programmed in, the current pattern can be cycled by activating the touch sensor on GPIO 13.
