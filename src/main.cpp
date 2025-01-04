@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include <RGBMatrix.h>
 #include "PatternManager.h"
-#include <functional>
 
 // Number of ticks of duration of the the timer that updates the matrix
 // See https://deepbluembedded.com/esp32-timers-timer-interrupt-tutorial-arduino-ide/
